@@ -14,21 +14,6 @@ sudo adduser --disabled-password cowrie
 sudo touch /etc/authbind/byport/22
 sudo chown cowrie:cowrie /etc/authbind/byport/22
 sudo chmod 777 /etc/authbind/byport/22
-sudo passwd cowrie
-sudo su -cowrie
-git clone http://github.com/cowrie/cowrie
-cd cowrie
-virtualenv --python=python3.8 cowrie_env
-source cowrie_env/bin/activate
-pip install --upgrade pip
-pip install --upgrade  -r requirements.txt
-cp etc/cowrie.cfg.dist  etc/cowrie.cfg
-nano  etc/cowrie.cfg
-nano etc/userdb.txt
-bin/cowrie start
-bin/cowrie status
-exit
-tail -f /home/cowrie/cowrie/var/log/cowrie/cowrie.log
 
 
 
@@ -37,4 +22,5 @@ tail -f /home/cowrie/cowrie/var/log/cowrie/cowrie.log
 
 
 
-shuhari@debian:~$ sudo ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@192.168.80.137
+
+
